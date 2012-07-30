@@ -62,6 +62,14 @@
            (type sb!vm:word new-value))
   (%raw-instance-set/word instance index new-value))
 
+(defun %raw-instance-ref/signed-word (instance index)
+  (declare (type index index))
+  (%raw-instance-ref/signed-word instance index))
+(defun %raw-instance-set/signed-word (instance index new-value)
+  (declare (type index index)
+           (type sb!vm::signed-word new-value))
+  (%raw-instance-set/signed-word instance index new-value))
+
 (defun %raw-instance-ref/single (instance index)
   (declare (type index index))
   (%raw-instance-ref/single instance index))

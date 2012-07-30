@@ -230,7 +230,7 @@
                             #!+long-float long-float
                             complex-single-float complex-double-float
                             #!+long-float complex-long-float
-                            sb!vm:word))
+                            sb!vm:word sb!vm:signed-word))
   (read-only nil :type (member t nil)))
 (def!method print-object ((x defstruct-slot-description) stream)
   (print-unreadable-object (x stream :type t)
@@ -281,6 +281,10 @@
        (make-raw-slot-data :raw-type 'sb!vm:word
                            :accessor-name '%raw-instance-ref/word
                            :init-vop 'sb!vm::raw-instance-init/word
+                           :n-words 1)
+       (make-raw-slot-data :raw-type 'sb!vm:signed-word
+                           :accessor-name '%raw-instance-ref/signed-word
+                           :init-vop 'sb!vm::raw-instance-init/signed-word
                            :n-words 1)
        (make-raw-slot-data :raw-type 'single-float
                            :accessor-name '%raw-instance-ref/single

@@ -140,6 +140,10 @@
   (flushable always-translatable))
 (defknown %raw-instance-set/word (instance index sb!vm:word) sb!vm:word
   (always-translatable))
+(defknown %raw-instance-ref/signed-word (instance index) sb!vm:signed-word
+  (flushable always-translatable))
+(defknown %raw-instance-set/signed-word (instance index sb!vm:signed-word) sb!vm:signed-word
+  (always-translatable))
 (defknown %raw-instance-ref/single (instance index) single-float
   (flushable always-translatable))
 (defknown %raw-instance-set/single (instance index single-float) single-float
