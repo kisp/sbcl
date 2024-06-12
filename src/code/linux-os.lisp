@@ -31,6 +31,7 @@
 
 ;;; support for CL:MACHINE-VERSION defined OAOO elsewhere
 (defun get-machine-version ()
+  (return-from get-machine-version "foo")
   (or
    #+(and mips little-endian)
    "little-endian"
