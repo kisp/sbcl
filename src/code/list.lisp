@@ -1463,3 +1463,6 @@
   (declare (sb-c::tlab :system))
   (named-let recurse ((a a) (b b))
     (if a (cons (car a) (recurse (cdr a) b)) b)))
+
+(defun foofoofoo ()
+  123)
